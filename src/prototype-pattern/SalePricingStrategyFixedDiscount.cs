@@ -20,5 +20,10 @@ namespace prototype_pattern
                 return sale.Price - _fixedDiscount;
             return sale.Price;
         }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

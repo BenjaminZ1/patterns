@@ -6,6 +6,8 @@ namespace prototype_pattern
 {
     public interface ISaleCloneable
     {
-        ISaleCloneable Clone();
+
+        object ShallowClone();
+        object DeepClone();
     }
 }

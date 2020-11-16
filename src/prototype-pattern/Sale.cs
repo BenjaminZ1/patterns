@@ -7,8 +7,12 @@ namespace prototype_pattern
     public class Sale : ISaleCloneable
     {
         
-        private readonly ISalePricingStrategy _salePricingStrategy;
+        private ISalePricingStrategy _salePricingStrategy;
 
+        public ISalePricingStrategy ISalePricingStrategy
+        {
+            get { return _salePricingStrategy; }
+        }
         public string Name { get; set; }
         public decimal Price { get; set; }
 
@@ -25,9 +29,21 @@ namespace prototype_pattern
             return _salePricingStrategy.GetTotal(this);
         }
 
-        public ISaleCloneable Clone()
+        private void SetSalePricingStrategy(ISalePricingStrategy salePricingStrategy)
         {
-            return this.MemberwiseClone() as ISaleCloneable;
+            _salePricingStrategy = salePricingStrategy;
+        }
+
+        public object ShallowClone()
+        {
+            return this.MemberwiseClone() as Sale;
+        }
+
+        public object DeepClone()
+        {
+            var clone = (Sale)this.MemberwiseClone() ;
+            clone.SetSalePricingStrategy((ISalePricingStrategy)this._salePricingStrategy.Clone());
+            return clone;
         }
     }
 }

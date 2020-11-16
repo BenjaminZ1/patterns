@@ -10,17 +10,34 @@ namespace prototype_pattern.Tests
     class PrototpyeTests
     {
         [Test]
-        public void Sale_Clone_ReturnsCorrectObject()
+        public void Sale_ShallowClone_ReturnsCorrectObject()
         {
             //arrange
-            var saleOriginal = new Sale("Original", 100, new SalePricingStrategyFixedDiscount(80, true));
+            ISalePricingStrategy originalSalePricingStrategy = new SalePricingStrategyFixedDiscount(80, true);
+            var saleOriginal = new Sale("Original", 100, originalSalePricingStrategy);
 
             //act
-            var saleClone = saleOriginal.Clone();
+            var saleClone = (Sale)saleOriginal.ShallowClone();
 
             //assert
             saleClone.Should().BeEquivalentTo(saleOriginal);
             saleClone.Should().NotBeSameAs(saleOriginal);
+            saleClone.ISalePricingStrategy.Should().BeSameAs(originalSalePricingStrategy);
+        }
+        [Test]
+        public void Sale_DeepClone_ReturnsCorrectObject()
+        {
+            //arrange
+            ISalePricingStrategy originalSalePricingStrategy = new SalePricingStrategyFixedDiscount(80, true);
+            var saleOriginal = new Sale("Original", 100, originalSalePricingStrategy);
+
+            //act
+            var saleClone = (Sale)saleOriginal.DeepClone();
+
+            //assert
+            saleClone.Should().BeEquivalentTo(saleOriginal);
+            saleClone.Should().NotBeSameAs(saleOriginal);
+            saleClone.ISalePricingStrategy.Should().NotBeSameAs(originalSalePricingStrategy);
         }
     }
 }
