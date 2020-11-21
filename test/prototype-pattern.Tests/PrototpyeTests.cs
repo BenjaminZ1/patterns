@@ -72,15 +72,5 @@ namespace prototype_pattern.Tests
             //assert
             result.Should().Be(20);
         }
-
-        [Test]
-        public void Flup()
-        {
-            var sale = new Sale.SaleB();
-            sale.GetTotal();
-            var clone = sale.DeepClone();
-        }
-            
-        
     }
 }

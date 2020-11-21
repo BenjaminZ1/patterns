@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F1BC7E0A-685E-4F7D-B5A8-1A27017F41A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prototype-pattern", "src\prototype-pattern\prototype-pattern.csproj", "{E42B54C1-86AF-4371-B1D2-55000E15A64A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prototype-pattern", "src\prototype-pattern\prototype-pattern.csproj", "{E42B54C1-86AF-4371-B1D2-55000E15A64A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{09D96C76-4DC7-4B7A-A717-AC49135C2D4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prototype-pattern.Tests", "test\prototype-pattern.Tests\prototype-pattern.Tests.csproj", "{06AB5C94-09BA-42F8-8113-351C02D7E48B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prototype-pattern.Tests", "test\prototype-pattern.Tests\prototype-pattern.Tests.csproj", "{06AB5C94-09BA-42F8-8113-351C02D7E48B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E42B54C1-86AF-4371-B1D2-55000E15A64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,8 +46,14 @@ Global
 		{06AB5C94-09BA-42F8-8113-351C02D7E48B}.Release|x86.ActiveCfg = Release|Any CPU
 		{06AB5C94-09BA-42F8-8113-351C02D7E48B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E42B54C1-86AF-4371-B1D2-55000E15A64A} = {F1BC7E0A-685E-4F7D-B5A8-1A27017F41A9}
 		{06AB5C94-09BA-42F8-8113-351C02D7E48B} = {09D96C76-4DC7-4B7A-A717-AC49135C2D4D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {128656D5-5D2C-49D8-A351-DD07260EFE14}
 	EndGlobalSection
 EndGlobal
