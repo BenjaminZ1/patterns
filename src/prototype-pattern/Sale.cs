@@ -45,11 +45,5 @@ namespace prototype_pattern
             clone.SetSalePricingStrategy((ISalePricingStrategy)this._salePricingStrategy.Clone());
             return clone;
         }
-
-        public class SaleB : Sale
-        {
-            public SaleB() : base("test", 12, new SalePricingStrategyFixedDiscount(20, false)) { }
-
-        }
     }
 }
