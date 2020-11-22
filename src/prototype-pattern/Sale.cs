@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace prototype_pattern
+﻿namespace prototype_pattern
 {
     public abstract class SalePrototype : ISaleCloneable
     {
-        public virtual object ShallowClone()
+        public object ShallowClone()
         {
             return this.MemberwiseClone();
         }
         public abstract object DeepClone();
-
     }
     public class Sale : SalePrototype
     {
-        
+
         private ISalePricingStrategy _salePricingStrategy;
 
         public ISalePricingStrategy ISalePricingStrategy
@@ -42,10 +37,10 @@ namespace prototype_pattern
         {
             _salePricingStrategy = salePricingStrategy;
         }
-        
+
         public override object DeepClone()
         {
-            var clone = (Sale)this.MemberwiseClone() ;
+            var clone = (Sale)this.MemberwiseClone();
             clone.SetSalePricingStrategy((ISalePricingStrategy)this._salePricingStrategy.Clone());
             return clone;
         }

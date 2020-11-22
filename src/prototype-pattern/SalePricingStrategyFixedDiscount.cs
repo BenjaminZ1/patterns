@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace prototype_pattern
+﻿namespace prototype_pattern
 {
     public class SalePricingStrategyFixedDiscount : ISalePricingStrategy
     {

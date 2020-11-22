@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
 
 namespace prototype_pattern.Tests
@@ -64,7 +60,7 @@ namespace prototype_pattern.Tests
             var originalSalePricingStrategy = new SalePricingStrategyFixedDiscount(80, true);
             var saleOriginal = new Sale("Original", 100, originalSalePricingStrategy);
 
-            var saleClone = (Sale) saleOriginal.DeepClone();
+            var saleClone = (Sale)saleOriginal.DeepClone();
 
             //act
             var result = saleClone.GetTotal();
