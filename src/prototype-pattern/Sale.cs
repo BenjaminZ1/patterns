@@ -4,7 +4,16 @@ using System.Text;
 
 namespace prototype_pattern
 {
-    public class Sale : ISaleCloneable
+    public abstract class SalePrototype : ISaleCloneable
+    {
+        public virtual object ShallowClone()
+        {
+            return this.MemberwiseClone();
+        }
+        public abstract object DeepClone();
+
+    }
+    public class Sale : SalePrototype
     {
         
         private ISalePricingStrategy _salePricingStrategy;
@@ -33,13 +42,8 @@ namespace prototype_pattern
         {
             _salePricingStrategy = salePricingStrategy;
         }
-
-        public object ShallowClone()
-        {
-            return this.MemberwiseClone() as Sale;
-        }
-
-        public object DeepClone()
+        
+        public override object DeepClone()
         {
             var clone = (Sale)this.MemberwiseClone() ;
             clone.SetSalePricingStrategy((ISalePricingStrategy)this._salePricingStrategy.Clone());
