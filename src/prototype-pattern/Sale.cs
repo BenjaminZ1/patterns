@@ -16,6 +16,7 @@
         public ISalePricingStrategy ISalePricingStrategy
         {
             get { return _salePricingStrategy; }
+            private set { _salePricingStrategy = value; }
         }
         public string Name { get; set; }
         public decimal Price { get; set; }
@@ -33,15 +34,10 @@
             return _salePricingStrategy.GetTotal(this);
         }
 
-        private void SetSalePricingStrategy(ISalePricingStrategy salePricingStrategy)
-        {
-            _salePricingStrategy = salePricingStrategy;
-        }
-
         public override object DeepClone()
         {
             var clone = (Sale)this.MemberwiseClone();
-            clone.SetSalePricingStrategy((ISalePricingStrategy)this._salePricingStrategy.Clone());
+            clone.ISalePricingStrategy = (ISalePricingStrategy)this._salePricingStrategy.Clone();
             return clone;
         }
     }

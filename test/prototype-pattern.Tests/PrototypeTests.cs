@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace prototype_pattern.Tests
 {
     [TestFixture]
-    class PrototpyeTests
+    class PrototypeTests
     {
         [Test]
         public void Sale_ShallowClone_ReturnsCorrectObject()
